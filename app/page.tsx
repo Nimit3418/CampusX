@@ -5,6 +5,7 @@ import { ArrowRight, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { HeroScene } from "@/components/3d/hero-scene"
+import { SplineHero } from "@/components/3d/spline-hero"
 import { AnimatedNavbar } from "@/components/animated-navbar"
 import { AnimatedStats } from "@/components/animated-stats"
 import { AnimatedFeatures } from "@/components/animated-features"
@@ -23,8 +24,13 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-16">
-        {/* 3D Background Scene */}
+        {/* 3D Background Scene - Choose one: */}
+
+        {/* Option 1: React Three Fiber (current) */}
         <HeroScene />
+
+        {/* Option 2: Spline (uncomment to use) */}
+        {/* <SplineHero /> */}
 
         {/* Gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background pointer-events-none" />
@@ -106,17 +112,22 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.9 }}
               className="mt-16 flex flex-wrap items-center justify-center gap-3"
             >
-              {["Products", "Services", "Requests"].map((item, index) => (
-                <motion.div
-                  key={item}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1 + index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="px-5 py-2.5 rounded-full glass border border-white/10 text-sm font-medium text-muted-foreground hover:text-cyan-400 hover:border-cyan-500/30 transition-all cursor-default"
-                >
-                  {item}
-                </motion.div>
+              {[
+                { name: "Products", href: "/products" },
+                { name: "Services", href: "/services" },
+                { name: "Requests", href: "/requests" },
+              ].map((item, index) => (
+                <Link key={item.name} href={item.href}>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 1 + index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                    className="px-5 py-2.5 rounded-full glass border border-white/10 text-sm font-medium text-muted-foreground hover:text-cyan-400 hover:border-cyan-500/30 transition-all cursor-pointer"
+                  >
+                    {item.name}
+                  </motion.div>
+                </Link>
               ))}
             </motion.div>
           </motion.div>

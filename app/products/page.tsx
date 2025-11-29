@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server"
 import { Navbar } from "@/components/navbar"
 import { ProductCard } from "@/components/product-card"
+import { SplineProductShowcase } from "@/components/3d/spline-product-showcase"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -8,6 +9,7 @@ import Link from "next/link"
 import { Plus, Search } from "lucide-react"
 import { PRODUCT_CATEGORIES } from "@/lib/types"
 import type { Product } from "@/lib/types"
+import { mockProducts } from "@/lib/mock-data"
 
 export default async function ProductsPage({
   searchParams,
@@ -33,6 +35,9 @@ export default async function ProductsPage({
 
   const { data: products } = await query
 
+  // Use mock data if no products are found in the database
+  const displayProducts = products && products.length > 0 ? products : mockProducts
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -52,6 +57,15 @@ export default async function ProductsPage({
               </Button>
             </Link>
           </div>
+
+          {/* 3D Product Showcase - Optional Feature */}
+          {/* Uncomment to display an interactive 3D product preview */}
+          {/* <div className="mb-12">
+            <SplineProductShowcase 
+              title="Featured 3D Product Preview"
+              description="Experience our products in interactive 3D"
+            />
+          </div> */}
 
           {/* Search and Filters */}
           <div className="mb-8">
@@ -88,9 +102,9 @@ export default async function ProductsPage({
           </div>
 
           {/* Products Grid */}
-          {products && products.length > 0 ? (
+          {displayProducts && displayProducts.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {products.map((product: Product) => (
+              {displayProducts.map((product: Product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
