@@ -27,10 +27,10 @@ export default function HomePage() {
         {/* 3D Background Scene - Choose one: */}
 
         {/* Option 1: React Three Fiber (current) */}
-        <HeroScene />
+        {/* <HeroScene /> */}
 
         {/* Option 2: Spline (uncomment to use) */}
-        {/* <SplineHero /> */}
+        <SplineHero />
 
         {/* Gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background pointer-events-none" />
