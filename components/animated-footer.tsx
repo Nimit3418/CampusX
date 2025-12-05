@@ -22,7 +22,7 @@ export function AnimatedFooter() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center">
               <Sparkles className="h-5 w-5 text-white" />
             </div>
-            <span className="font-bold text-xl text-gradient">SkillLink</span>
+            <span className="font-bold text-xl text-gradient">CampusXchange</span>
           </motion.div>
 
           {/* Links */}
@@ -77,7 +77,7 @@ export function AnimatedFooter() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-8 pt-8 border-t border-white/10 text-center"
         >
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} SkillLink. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} CampusXchange. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>

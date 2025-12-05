@@ -66,14 +66,14 @@ export default function SignUpPage() {
             <div className="w-10 h-10 bg-foreground rounded-lg flex items-center justify-center">
               <span className="text-background font-bold">SL</span>
             </div>
-            <span className="font-semibold text-2xl">SkillLink</span>
+            <span className="font-semibold text-2xl">CampusXchange</span>
           </Link>
         </div>
 
         <Card className="border-border">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">Create an account</CardTitle>
-            <CardDescription>Join SkillLink and start trading on campus</CardDescription>
+            <CardDescription>Join CampusXchange and start trading on campus</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSignUp}>

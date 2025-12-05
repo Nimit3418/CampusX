@@ -59,7 +59,7 @@ export function Navbar() {
             <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
               <span className="text-background font-bold text-sm">SL</span>
             </div>
-            <span className="font-semibold text-xl">SkillLink</span>
+            <span className="font-semibold text-xl">CampusXchange</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -68,11 +68,10 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`transition-colors ${
-                  pathname.startsWith(link.href)
+                className={`transition-colors ${pathname.startsWith(link.href)
                     ? "text-foreground font-medium"
                     : "text-muted-foreground hover:text-foreground"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>
@@ -153,9 +152,8 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`py-2 transition-colors ${
-                    pathname.startsWith(link.href) ? "text-foreground font-medium" : "text-muted-foreground"
-                  }`}
+                  className={`py-2 transition-colors ${pathname.startsWith(link.href) ? "text-foreground font-medium" : "text-muted-foreground"
+                    }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}

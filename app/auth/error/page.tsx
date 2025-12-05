@@ -12,7 +12,7 @@ export default function AuthErrorPage() {
             <div className="w-10 h-10 bg-foreground rounded-lg flex items-center justify-center">
               <span className="text-background font-bold">SL</span>
             </div>
-            <span className="font-semibold text-2xl">SkillLink</span>
+            <span className="font-semibold text-2xl">CampusXchange</span>
           </Link>
         </div>
 

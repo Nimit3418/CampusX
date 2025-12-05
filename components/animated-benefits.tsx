@@ -54,7 +54,7 @@ export function AnimatedBenefits() {
           className="text-center mb-16"
         >
           <span className="text-cyan-400 text-sm font-medium tracking-wider uppercase mb-4 block">
-            Why Choose SkillLink
+            Why Choose CampusXchange
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             Built for <span className="text-gradient">campus life</span>

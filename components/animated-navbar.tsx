@@ -65,9 +65,8 @@ export function AnimatedNavbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass border-b border-white/10 shadow-lg shadow-cyan-500/5" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass border-b border-white/10 shadow-lg shadow-cyan-500/5" : "bg-transparent"
+        }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -79,7 +78,7 @@ export function AnimatedNavbar() {
             >
               <Sparkles className="h-5 w-5 text-white" />
             </motion.div>
-            <span className="font-bold text-xl text-gradient">SkillLink</span>
+            <span className="font-bold text-xl text-gradient">CampusXchange</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -93,9 +92,8 @@ export function AnimatedNavbar() {
               >
                 <Link
                   href={link.href}
-                  className={`relative px-4 py-2 rounded-lg transition-all duration-300 ${
-                    pathname.startsWith(link.href) ? "text-cyan-400" : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={`relative px-4 py-2 rounded-lg transition-all duration-300 ${pathname.startsWith(link.href) ? "text-cyan-400" : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   {link.label}
                   {pathname.startsWith(link.href) && (
@@ -196,11 +194,10 @@ export function AnimatedNavbar() {
                   >
                     <Link
                       href={link.href}
-                      className={`block py-3 px-4 rounded-lg transition-colors ${
-                        pathname.startsWith(link.href)
+                      className={`block py-3 px-4 rounded-lg transition-colors ${pathname.startsWith(link.href)
                           ? "text-cyan-400 bg-cyan-400/10"
                           : "text-muted-foreground hover:text-foreground hover:bg-white/5"
-                      }`}
+                        }`}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {link.label}

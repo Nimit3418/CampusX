@@ -1,4 +1,4 @@
-// SkillLink TypeScript Types
+// CampusXchange TypeScript Types
 
 export interface Profile {
   id: string
